@@ -1,0 +1,30 @@
+server:
+  port: 8090
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8091
+spring:
+  profiles: dev
+
+---
+server:
+  port: 8092
+spring:
+  profiles: prod
+
+#person:
+#  name: robin
+#  age: 25
+#  boss: false
+#  birth: 1995/02/24
+#  map: {k1: v2,k2: v2}
+#  list:
+#    - 3
+#    - bbb
+#  dog:
+#    name: husky
+#    age: 2
