@@ -7,14 +7,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class Springboot03LoggingApplicationTests {
-	Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Test
 	void contextLoads() {
-		logger.trace("This is trace log...");
-		logger.debug("This is debug log...");
-		logger.info("This is info log...");
-		logger.warn("This is warning log...");
-		logger.error("This is error log...");
+		Logger LOGGER = LoggerFactory.getLogger(getClass());
+
+		LOGGER.trace("This is trace log...");
+		LOGGER.debug("This is debug log...");
+		LOGGER.info("This is info log...");
+		LOGGER.warn("This is warn log...");
+		LOGGER.error("This is error log...");
 	}
+
 }
