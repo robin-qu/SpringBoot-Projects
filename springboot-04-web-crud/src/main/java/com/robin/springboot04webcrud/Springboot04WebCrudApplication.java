@@ -1,8 +1,10 @@
 package com.robin.springboot04webcrud;
 
+import com.robin.springboot04webcrud.component.MyLocaleResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
@@ -25,5 +27,10 @@ public class Springboot04WebCrudApplication {
         public View resolveViewName(String s, Locale locale) throws Exception {
             return null;
         }
+    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new MyLocaleResolver();
     }
 }
