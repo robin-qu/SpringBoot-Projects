@@ -8,11 +8,15 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-// @EnableWebMvc
+/**
+ * Extending SpringMVC's functionalities by declaring a WebMvcConfigurer configuration class
+ */
+// @EnableWebMvc  // take complete control of SpingMVC
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        // redirect "/robin" request to success
         registry.addViewController("/robin").setViewName("success");
     }
 
