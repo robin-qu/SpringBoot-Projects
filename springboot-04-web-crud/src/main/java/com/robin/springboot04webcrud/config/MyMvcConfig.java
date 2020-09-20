@@ -1,6 +1,10 @@
 package com.robin.springboot04webcrud.config;
 
 import com.robin.springboot04webcrud.component.LoginHandlerInterceptor;
+import org.apache.catalina.connector.Connector;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+import org.springframework.boot.web.server.WebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -14,6 +18,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // @EnableWebMvc  // take complete control of SpingMVC
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
+    @Bean
+    public TomcatConnectorCustomizer tomcatConnectorCustomizer() {
+        return new TomcatConnectorCustomizer() {
+            @Override
+            public void customize(Connector connector) {
+                connector.setPort(8083);
+            }
+        };
+    }
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // redirect "/robin" request to success
