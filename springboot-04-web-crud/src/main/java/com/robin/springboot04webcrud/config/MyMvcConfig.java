@@ -18,16 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // @EnableWebMvc  // take complete control of SpingMVC
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
-    @Bean
-    public TomcatConnectorCustomizer tomcatConnectorCustomizer() {
-        return new TomcatConnectorCustomizer() {
-            @Override
-            public void customize(Connector connector) {
-                connector.setPort(8083);
-            }
-        };
-    }
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // redirect "/robin" request to success
