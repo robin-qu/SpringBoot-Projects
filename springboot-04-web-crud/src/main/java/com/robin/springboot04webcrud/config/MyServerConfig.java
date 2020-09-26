@@ -4,7 +4,16 @@ import com.robin.springboot04webcrud.filter.MyFilter;
 import com.robin.springboot04webcrud.listener.MyListener;
 import com.robin.springboot04webcrud.servlet.MyServlet;
 import org.apache.catalina.connector.Connector;
+// import org.eclipse.jetty.server.Server;
+// import io.undertow.Undertow;
+// import io.undertow.servlet.api.DeploymentInfo;
+import org.springframework.boot.autoconfigure.web.embedded.JettyWebServerFactoryCustomizer;
+import org.springframework.boot.autoconfigure.web.servlet.UndertowServletWebServerFactoryCustomizer;
+import org.springframework.boot.web.embedded.jetty.ConfigurableJettyWebServerFactory;
+import org.springframework.boot.web.embedded.jetty.JettyServerCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+import org.springframework.boot.web.embedded.undertow.UndertowBuilderCustomizer;
+import org.springframework.boot.web.embedded.undertow.UndertowDeploymentInfoCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -44,7 +53,7 @@ public class MyServerConfig {
         return eventListenerServletListenerRegistrationBean;
     }
 
-    // configure embedded servlet server
+    // configure embedded tomcat servlet server
     @Bean
     public TomcatConnectorCustomizer tomcatConnectorCustomizer() {
         return new TomcatConnectorCustomizer() {
@@ -54,4 +63,24 @@ public class MyServerConfig {
             }
         };
     }
+
+    // @Bean
+    // public JettyServerCustomizer jettyServerCustomizer() {
+    //     return new JettyServerCustomizer() {
+    //         @Override
+    //         public void customize(Server server) {
+    //
+    //         }
+    //     };
+    // }
+
+    // @Bean
+    // public UndertowDeploymentInfoCustomizer undertowDeploymentInfoCustomizer() {
+    //     return new UndertowDeploymentInfoCustomizer() {
+    //         @Override
+    //         public void customize(DeploymentInfo deploymentInfo) {
+    //
+    //         }
+    //     };
+    // }
 }
