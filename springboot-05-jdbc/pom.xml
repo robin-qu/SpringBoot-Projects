@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.robin</groupId>
-    <artifactId>springboot-05-data-jdbc</artifactId>
+    <artifactId>springboot-05-jdbc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-05-data-jdbc</name>
+    <name>springboot-05-jdbc</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
