@@ -2,7 +2,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/mybatis
+    url: jdbc:mysql://192.168.1.8:3306/mybatis
     driver-class-name: com.mysql.cj.jdbc.Driver
     initialization-mode: always
     type: com.alibaba.druid.pool.DruidDataSource
@@ -21,3 +21,6 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    schema:
+#      - classpath:sql/department.sql
+#      - classpath:sql/employee.sql
