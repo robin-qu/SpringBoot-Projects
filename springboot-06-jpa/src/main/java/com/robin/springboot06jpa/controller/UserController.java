@@ -20,7 +20,8 @@ public class UserController {
         return user.orElseGet(User::new);
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user" +
+            "")
     public User insertUser(User user) {
         return userRepository.save(user);
     }
